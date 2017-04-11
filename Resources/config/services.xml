@@ -58,6 +58,12 @@
             <tag name="nelmio_api_doc.model_describer" />
         </service>
 
+        <service id="nelmio_api_doc.model_describers.form" class="Nelmio\ApiDocBundle\ModelDescriber\FormModelDescriber" public="false">
+            <argument type="service" id="form.factory" />
+
+            <tag name="nelmio_api_doc.model_describer" priority="10" />
+        </service>
+
         <service id="nelmio_api_doc.model_describers.collection" class="Nelmio\ApiDocBundle\ModelDescriber\CollectionModelDescriber" public="false">
             <tag name="nelmio_api_doc.model_describer" />
         </service>

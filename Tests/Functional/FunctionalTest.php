@@ -144,6 +144,13 @@ class FunctionalTest extends WebTestCase
         $this->assertEquals('#/definitions/Dummy2', $properties->get('dummy')->getRef());
     }
 
+    public function testFormModel()
+    {
+        $model = $this->getModel('DummyType');
+
+        var_dump($model);
+    }
+
     public function testUsersModel()
     {
         $model = $this->getModel('User[]');

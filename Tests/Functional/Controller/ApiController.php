@@ -16,6 +16,7 @@ use FOS\RestBundle\Controller\Annotations\RequestParam;
 use Nelmio\ApiDocBundle\Annotation\Model;
 use Nelmio\ApiDocBundle\Annotation\Operation;
 use Nelmio\ApiDocBundle\Tests\Functional\Entity\User;
+use Nelmio\ApiDocBundle\Tests\Functional\Form\DummyType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Swagger\Annotations as SWG;
 
@@ -103,5 +104,23 @@ class ApiController
      */
     public function filteredAction()
     {
+    }
+
+    /**
+     * @Route("/form", methods={"POST"})
+     * @SWG\Parameter(
+     *     name="foo",
+     *     in="body",
+     *     description="This is a parameter",
+     *     @SWG\Schema(
+     *         type="array",
+     *         @Model(type=DummyType::class)
+     *     )
+     * )
+     * @SWG\Response(response="201", description="When created")
+     */
+    public function formAction()
+    {
+
     }
 }
